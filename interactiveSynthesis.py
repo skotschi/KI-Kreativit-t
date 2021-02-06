@@ -1,5 +1,4 @@
 from transformers import pipeline
-# import sys
 
 pipe = pipeline('text-generation', model="dbmdz/german-gpt2",
                 tokenizer="dbmdz/german-gpt2")
