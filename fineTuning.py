@@ -9,6 +9,8 @@ from tokenizers.trainers import BpeTrainer
 with open('pegida_korpus.txt') as f:
     pegidaCorpus = f.read()
 
+paths = [str(x) for x in Path(".").glob("**/*.txt")]
+
 # First we create an empty Byte-Pair Encoding model (i.e. not trained model)
 tokenizer = Tokenizer(BPE())
 
@@ -41,5 +43,3 @@ print("Encoded string: {}".format(encoding.tokens))
 
 decoded = tokenizer.decode(encoding.ids)
 print("Decoded string: {}".format(decoded))
-
-text_generator = pipe
